@@ -1,0 +1,760 @@
+.site-shell {
+  --ink: #1d3025;
+  --muted: #6c756d;
+  --green: #315b3b;
+  --bright-green: #d9e8c5;
+  --paper: #f8f8f2;
+  --line: #dedfd4;
+  --saffron: #cf783b;
+  color: var(--ink);
+  background: var(--paper);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.site-header {
+  height: 88px;
+  position: relative;
+  z-index: 5;
+  background: rgba(248, 248, 242, 0.97);
+  border-bottom: 1px solid rgba(29, 48, 37, 0.12);
+}
+
+.nav-wrap {
+  height: 100%;
+  max-width: 1440px;
+  padding: 0 7.1%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand,
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand { gap: 11px; }
+.brand img { width: 47px; height: 47px; object-fit: contain; }
+.brand-name { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 19px; font-weight: 500; line-height: 1.1; }
+.brand-name b, .footer-brand b { color: var(--green); font-weight: 800; }
+.brand-name small { display: block; margin-top: 5px; color: #81867c; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0; }
+
+.nav-links { display: flex; align-items: center; gap: 39px; margin-left: auto; margin-right: 48px; }
+.nav-links a { color: #455248; text-decoration: none; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 14px; transition: color 160ms ease; }
+.nav-links a:hover { color: var(--saffron); }
+.nav-links .nav-contact { display: flex; align-items: center; gap: 8px; color: var(--green); font-weight: 600; }
+.nav-contact svg { transition: transform 180ms ease; }
+.nav-contact:hover svg { transform: translateX(3px); }
+
+.account-wrap { position: relative; }
+.account-button { min-height: 42px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border: 1px solid #d8ddd2; border-radius: 3px; color: var(--ink); background: transparent; cursor: pointer; }
+.account-label { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; }
+.account-button > svg:last-child { transition: transform 160ms ease; }
+.account-button .chevron-up { transform: rotate(180deg); }
+.account-menu { position: absolute; right: 0; top: calc(100% + 10px); min-width: 168px; padding: 7px; border: 1px solid var(--line); background: #fff; box-shadow: 0 12px 30px #1d30251c; }
+.account-menu button { width: 100%; padding: 10px 12px; border: 0; text-align: left; background: transparent; color: var(--ink); cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 14px; }
+.account-menu button:hover { background: #f1f4eb; }
+.account-greeting { padding: 8px 12px 5px; color: var(--muted); font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; }
+.mobile-menu-button { display: none; }
+
+.hero-section { min-height: 590px; max-width: 1440px; margin: 0 auto; padding: 35px 0 54px 7.1%; display: grid; grid-template-columns: 0.85fr 1.15fr; position: relative; }
+.hero-copy { align-self: center; padding: 12px 38px 28px 0; position: relative; z-index: 1; }
+.eyebrow, .section-kicker { display: flex; align-items: center; gap: 10px; color: var(--saffron); font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; font-weight: 600; }
+.eyebrow { margin-bottom: 24px; }
+.eyebrow-line { display: inline-block; width: 30px; height: 1px; background: currentColor; }
+.hero-copy h1 { margin: 0; color: var(--ink); font-family: 'Noto Serif Devanagari', serif; font-size: clamp(42px, 5.1vw, 70px); font-weight: 500; line-height: 1.31; }
+.hero-copy h1 em, .about-heading h2 em, .loans-topline h2 em, .closing-band em, .login-panel h2 em { color: var(--green); font-style: normal; }
+.hero-description { max-width: 430px; margin-top: 20px; color: #69756b; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 15px; line-height: 1.95; }
+.primary-link { display: inline-flex; align-items: center; gap: 26px; margin-top: 26px; padding: 14px 18px; background: var(--green); color: white; text-decoration: none; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 14px; transition: background 160ms ease; }
+.primary-link:hover { background: #24482d; }
+.primary-link svg { transition: transform 160ms ease; }
+.primary-link:hover svg { transform: translateX(4px); }
+.hero-note { display: flex; align-items: center; gap: 11px; margin-top: 35px; color: #7a8279; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; line-height: 1.8; }
+.hero-note strong { color: #415647; font-size: 12px; font-weight: 600; }
+.note-icon { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid #d1dccb; border-radius: 50%; color: var(--green); }
+.hero-visual { min-width: 0; min-height: 480px; position: relative; overflow: hidden; }
+.hero-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20, 34, 23, 0.34), transparent 45%), linear-gradient(90deg, rgba(20, 34, 23, 0.1), transparent 38%); pointer-events: none; }
+.hero-visual > img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 50% 54%; animation: image-arrive 900ms ease both; }
+.image-caption { position: absolute; z-index: 1; left: 35px; bottom: 31px; display: flex; align-items: center; gap: 14px; color: white; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; }
+.caption-dash { display: block; width: 43px; height: 1px; background: #ffffffa8; }
+.hero-stamp { width: 107px; height: 107px; position: absolute; z-index: 1; top: 30px; right: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 1px solid #ffffff88; border-radius: 50%; color: white; background: #244a3260; backdrop-filter: blur(3px); font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.scroll-cue { position: absolute; left: 7.1%; bottom: 21px; display: flex; align-items: center; gap: 12px; color: #7c857b; text-decoration: none; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.scroll-cue svg { color: var(--green); }
+
+.about-section { min-height: 285px; padding: 61px 12.4% 63px 11.7%; display: grid; grid-template-columns: 44px 0.9fr 1.1fr; align-items: start; gap: 35px; position: relative; overflow: hidden; background: #e9eddf; }
+.section-index { display: flex; align-items: center; gap: 12px; padding-top: 7px; color: var(--saffron); font-family: Georgia, serif; font-size: 12px; }
+.section-index i { width: 23px; height: 1px; background: #c9824d; }
+.section-kicker { margin: 0 0 13px; }
+.about-heading h2, .loans-topline h2 { margin: 0; color: var(--ink); font-family: 'Noto Serif Devanagari', serif; font-size: 34px; font-weight: 500; line-height: 1.4; }
+.about-content { max-width: 480px; padding-top: 19px; position: relative; z-index: 1; }
+.about-content > p { color: #657264; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; line-height: 2; }
+.about-signoff { display: flex; align-items: center; gap: 10px; margin-top: 23px; color: #526b53; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.signoff-mark { width: 27px; height: 27px; display: grid; place-items: center; border: 1px solid #c0cfb8; border-radius: 50%; }
+.about-watermark { position: absolute; right: 6%; bottom: -60px; color: #dce4d2; font-family: 'Noto Serif Devanagari', serif; font-size: 190px; line-height: 1; }
+
+.loans-section { max-width: 1440px; margin: 0 auto; padding: 91px 11.7% 77px; }
+.loans-topline { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 34px; }
+.loans-topline h2 { font-size: 31px; }
+.loans-intro { margin: 0 0 3px; color: #768075; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; line-height: 1.9; }
+.loan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.loan-card { display: grid; grid-template-columns: 0.98fr 1.02fr; min-height: 290px; border: 1px solid #e1e2d8; color: inherit; background: #fff; text-decoration: none; transition: border-color 160ms ease, box-shadow 160ms ease; }
+.loan-card:hover { border-color: #bbc8b7; box-shadow: 0 9px 24px #243a2812; }
+.loan-card:focus-visible { outline: 2px solid #cf783b; outline-offset: 3px; }
+.loan-photo { min-height: 290px; position: relative; overflow: hidden; background: #d9e1d4; }
+.loan-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #172b1e44, transparent 50%); }
+.loan-photo img { width: 100%; height: 100%; position: absolute; object-fit: cover; transition: transform 400ms ease; }
+.loan-card:hover .loan-photo img { transform: scale(1.04); }
+.loan-card-ochre .loan-photo { background: #f2eee4; }
+.loan-card-ochre .loan-photo img { object-fit: contain; object-position: center; }
+.loan-card-ochre .loan-number { color: white; padding: 3px 7px; background: #315b3b; }
+.loan-card-ochre .loan-icon { border-color: #315b3b; color: white; background: #315b3b; }
+.loan-number { position: absolute; top: 15px; left: 16px; z-index: 1; color: white; font-family: 'Noto Serif Devanagari', serif; font-size: 15px; }
+.loan-icon { width: 42px; height: 42px; position: absolute; right: 15px; bottom: 15px; z-index: 1; display: grid; place-items: center; border: 1px solid #ffffff91; border-radius: 50%; color: white; background: #1d302554; backdrop-filter: blur(3px); }
+.loan-info { padding: 28px 22px 22px; display: flex; flex-direction: column; align-items: flex-start; }
+.loan-type { margin: 0 0 8px; color: var(--saffron); font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1px; }
+.loan-info h3 { margin: 0; color: var(--ink); font-family: 'Noto Serif Devanagari', serif; font-size: 25px; font-weight: 500; }
+.loan-description { margin: 12px 0 18px; color: #778077; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; line-height: 1.9; }
+.loan-action { display: inline-flex; align-items: center; gap: 12px; margin-top: auto; padding: 0 0 4px; border: 0; border-bottom: 1px solid #8ba18a; color: #34563b; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.loan-action svg { transition: transform 160ms ease; }
+.loan-action:hover svg { transform: translateX(4px); }
+.loan-card-ochre .loan-type { color: #bc7541; }
+.loan-card-ochre .loan-action { border-color: #cb9a74; color: #84552f; }
+.loan-footnote { display: flex; align-items: center; gap: 9px; margin-top: 26px; color: #788176; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.footnote-icon { width: 19px; height: 19px; display: grid; place-items: center; border: 1px solid #cbd6c5; border-radius: 50%; color: var(--green); }
+.footnote-rule { flex: 1; height: 1px; margin-left: 12px; background: #e0e2d8; }
+
+.loan-detail { max-width: 1440px; min-height: 620px; margin: 0 auto; padding: 34px 11.7% 55px; }
+.loan-detail-topline { display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 1px solid var(--line); color: #9a7d63; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.detail-back { display: inline-flex; align-items: center; gap: 8px; color: #69766a; text-decoration: none; }
+.detail-back svg { transform: rotate(90deg); }
+.loan-detail-layout { min-height: 455px; padding: 46px 0 38px; display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 54px; }
+.loan-detail-copy h1 { margin: 0; color: var(--ink); font-family: 'Noto Serif Devanagari', serif; font-size: clamp(38px, 4vw, 56px); font-weight: 500; line-height: 1.4; }
+.loan-detail-copy h1 em { color: var(--green); font-style: normal; }
+.loan-detail-description { max-width: 430px; margin: 17px 0 22px; color: #6c786d; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; line-height: 2; }
+.detail-benefit { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 24px; }
+.detail-benefit > span { width: 24px; height: 24px; flex: 0 0 24px; display: grid; place-items: center; border: 1px solid #c9d7c2; border-radius: 50%; color: var(--green); }
+.detail-benefit p { margin: 0; color: #425a47; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; font-weight: 600; line-height: 1.7; }
+.detail-benefit small { display: inline-block; margin-top: 3px; color: #7c857a; font-size: 10px; font-weight: 400; }
+.loan-detail-copy .primary-link { border: 0; cursor: pointer; }
+.loan-detail-image { height: 390px; position: relative; overflow: hidden; background: #dbe4d4; }
+.loan-detail-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, #15271c72, transparent 40%); pointer-events: none; }
+.loan-detail-image img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+.loan-detail-image.tractor-detail-image { background: #f2eee4; }
+.loan-detail-image.tractor-detail-image img { object-fit: contain; }
+.loan-detail-image > span { position: absolute; z-index: 1; left: 20px; bottom: 18px; display: inline-flex; align-items: center; gap: 9px; color: #fff; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; }
+.tractor-detail-image > span { color: var(--green); }
+.loan-detail-foot { display: flex; align-items: center; gap: 10px; color: #798477; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.loan-detail-foot svg { color: var(--green); }
+.detail-foot-rule { flex: 1; height: 1px; background: #e0e2d8; }
+
+.closing-band { min-height: 100px; padding: 20px 11.7%; display: flex; align-items: center; gap: 20px; background: #315b3b; color: white; }
+.closing-leaf { width: 47px; height: 47px; display: grid; place-items: center; border: 1px solid #ffffff5c; border-radius: 50%; color: #d8e5c8; }
+.closing-band p { flex: 1; margin: 0; font-family: 'Noto Serif Devanagari', serif; font-size: 22px; }
+.closing-band em { color: #d9e8c5; font-style: normal; }
+.closing-band > a { width: 41px; height: 41px; display: grid; place-items: center; border: 1px solid #ffffff70; border-radius: 50%; color: white; transition: background 160ms ease; }
+.closing-band > a:hover { background: #ffffff20; }
+
+.site-footer { min-height: 78px; padding: 15px 7.1%; display: flex; justify-content: space-between; align-items: center; gap: 20px; background: #f8f8f2; }
+.footer-brand { gap: 7px; font-size: 14px; font-weight: 500; }
+.footer-brand img { width: 30px; height: 30px; object-fit: contain; }
+.site-footer > p { color: #7b8278; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; text-align: center; }
+.back-to-top { display: inline-flex; align-items: center; gap: 7px; color: #657365; text-decoration: none; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.back-to-top svg { transform: rotate(180deg); }
+
+.modal-backdrop { position: fixed; z-index: 20; inset: 0; padding: 22px; display: flex; align-items: center; justify-content: center; overflow-y: auto; background: rgba(21, 34, 25, 0.68); backdrop-filter: blur(5px); animation: fade-in 180ms ease both; }
+.login-panel { width: min(100%, 465px); max-height: calc(100vh - 44px); padding: 25px 43px 27px; position: relative; overflow-y: auto; border-top: 4px solid var(--green); background: #fbfbf6; box-shadow: 0 22px 70px #101d1540; animation: panel-arrive 250ms ease both; }
+.modal-close { width: 34px; height: 34px; position: absolute; top: 14px; right: 14px; display: grid; place-items: center; border: 1px solid transparent; color: #69756b; background: transparent; cursor: pointer; }
+.modal-close:hover:not(:disabled) { border-color: var(--line); }
+.modal-close:disabled { opacity: 0; cursor: default; }
+.login-mark { width: 49px; height: 49px; margin-bottom: 10px; }
+.login-mark img { width: 100%; height: 100%; object-fit: contain; }
+.login-kicker { margin: 0 0 4px; color: var(--saffron); font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; font-weight: 600; }
+.login-panel h2 { margin: 0; color: var(--ink); font-family: 'Noto Serif Devanagari', serif; font-size: 27px; font-weight: 500; }
+.login-description { margin: 6px 0 17px; color: #7b8379; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; line-height: 1.7; }
+.login-form { display: grid; gap: 10px; }
+.login-form label { display: grid; gap: 5px; color: #4d5a4e; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; font-weight: 600; }
+.login-form input { width: 100%; height: 39px; padding: 0 11px; border: 1px solid #dfe2d9; border-radius: 0; outline: none; color: #26372a; background: white; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; font-weight: 400; }
+.password-input-wrap { position: relative; display: block; }
+.password-input-wrap input { padding-right: 43px !important; }
+.password-visibility { width: 36px; height: 36px; position: absolute; top: 50%; right: 3px; display: grid; place-items: center; transform: translateY(-50%); border: 0; color: #718071; background: transparent; cursor: pointer; }
+.password-visibility:hover { color: #315b3b; background: #eef2e9; }
+.password-visibility:focus-visible { outline: 2px solid #cf783b; outline-offset: -2px; }
+.login-form input::placeholder { color: #a1a69e; }
+.login-form input:focus { border-color: #608066; box-shadow: 0 0 0 2px #315b3b18; }
+.location-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+.submit-button { min-height: 43px; margin-top: 2px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between; border: 0; color: white; background: var(--green); cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; transition: background 160ms ease; }
+.submit-button:hover:not(:disabled) { background: #24482d; }
+.submit-button:disabled { opacity: 0.7; cursor: wait; }
+.form-error { margin: 0; color: #a43d30; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; line-height: 1.6; }
+.privacy-note { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 12px 0 0; color: #8a9186; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+.privacy-note span { width: 16px; height: 16px; display: grid; place-items: center; border: 1px solid #cbd6c5; border-radius: 50%; color: var(--green); }
+.form-notice { margin: 0; padding: 9px 11px; color: #315b3b; background: #e8f0e1; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; line-height: 1.6; }
+.recovery-note { margin: -2px 0 0; color: #80897e; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; line-height: 1.6; }
+.auth-links { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; margin-top: 14px; }
+.auth-links button { padding: 0; border: 0; color: #426448; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; text-decoration: underline; text-underline-offset: 3px; }
+
+.notifications-wrap { position: relative; margin-right: 18px; }
+.notification-button { width: 42px; height: 42px; position: relative; display: grid; place-items: center; border: 1px solid #d8ddd2; color: var(--ink); background: transparent; cursor: pointer; }
+.notification-button { text-decoration: none; }
+.notification-button:hover { background: #eef1e8; }
+.notification-count { min-width: 17px; height: 17px; position: absolute; top: -6px; right: -6px; padding: 0 4px; display: grid; place-items: center; border: 2px solid var(--paper); border-radius: 20px; color: white; background: #bd583f; font-family: sans-serif; font-size: 9px; line-height: 1; }
+.notification-menu { width: min(355px, calc(100vw - 32px)); max-height: 420px; position: absolute; z-index: 8; top: calc(100% + 10px); right: 0; overflow: auto; border: 1px solid var(--line); background: #fff; box-shadow: 0 14px 35px #1d30251c; }
+.notification-menu-head { padding: 13px 15px; display: flex; justify-content: space-between; border-bottom: 1px solid #e7e8df; color: var(--ink); font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; }
+.notification-menu-head span { color: #859082; font-size: 10px; }
+.notification-empty { margin: 0; padding: 23px 15px; color: #879084; text-align: center; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.notification-item { padding: 13px 15px 11px; border-bottom: 1px solid #ecece5; background: #f5f8f0; }
+.notification-item.notification-read { background: #fff; }
+.notification-item p { margin: 0 0 10px; color: #405344; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; line-height: 1.8; }
+.notification-item > div { display: flex; align-items: center; justify-content: space-between; color: #8a9186; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+.notification-item button { padding: 3px 0; border: 0; color: #416347; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; text-decoration: underline; }
+.notification-page { width: min(100% - 48px, 1060px); min-height: 520px; margin: 0 auto; padding: 54px 0 75px; }
+.notification-page-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.notification-page-heading .section-kicker { margin-bottom: 8px; }
+.notification-page-heading h1 { margin: 0; color: var(--ink); font-family: 'Noto Serif Devanagari', serif; font-size: 33px; font-weight: 500; }
+.notification-back { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 5px; color: #47634b; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; text-decoration: none; }
+.notification-back:hover { color: #a26338; }
+.notification-page-list { display: grid; }
+.notification-page-item { min-height: 82px; padding: 17px 6px; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 14px; border-bottom: 1px solid #e4e6dc; }
+.notification-state { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid #cbd9c4; border-radius: 50%; color: #315b3b; background: #eef3e8; }
+.notification-state-rejected { border-color: #e5c9c2; color: #9c4b3f; background: #fbefec; }
+.notification-page-item p { margin: 0 0 6px; color: #354739; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; line-height: 1.8; }
+.notification-page-item small { color: #858d82; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+.notification-read-label { padding: 4px 8px; color: #58715b; background: #eef3e8; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+.notification-page-empty { min-height: 240px; display: grid; place-content: center; justify-items: center; gap: 12px; color: #879084; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; }
+.notification-page-empty svg { color: #71856d; }
+
+.notification-page-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.notification-page-item:hover {
+  background: #f4f7f0;
+}
+
+.notification-application-number {
+  margin: 0 0 4px;
+  color: #315b3b;
+  font-size: 11px;
+}
+
+.notification-application-number strong {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.my-application-card-highlight {
+  border-color: var(--saffron);
+  box-shadow: 0 0 0 2px #cf783b22;
+}
+
+.my-applications-page {
+  width: min(100% - 48px, 1060px);
+  min-height: 520px;
+  margin: 0 auto;
+  padding: 54px 0 75px;
+}
+
+.my-applications-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.my-applications-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 33px;
+  font-weight: 500;
+}
+
+.my-application-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.my-application-card {
+  padding: 24px;
+  border: 1px solid #e0e3d9;
+  background: #fff;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.my-application-card:hover {
+  border-color: #bdcbb8;
+  box-shadow: 0 8px 24px #243a2810;
+}
+
+.my-application-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e7e8e0;
+}
+
+.my-application-type {
+  margin: 0 0 6px;
+  color: var(--saffron);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.my-application-card-head h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.application-status {
+  flex-shrink: 0;
+  padding: 6px 11px;
+  border: 1px solid #cbd8c5;
+  background: #eef3e9;
+  color: var(--green);
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 10px;
+}
+
+.status-rejected {
+  border-color: #e4c9c2;
+  background: #fbefec;
+  color: #9c4b3f;
+}
+
+.status-approved {
+  border-color: #c7d9c0;
+  background: #edf5e9;
+  color: #315b3b;
+}
+
+.status-under-review {
+  border-color: #d8d1bb;
+  background: #f7f3e7;
+  color: #806b3c;
+}
+
+.my-application-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 20px 0;
+}
+
+.my-application-details p {
+  margin: 0;
+}
+
+.my-application-details b {
+  display: block;
+  margin-bottom: 5px;
+  color: #7b857a;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.my-application-details span {
+  color: #34483a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.my-application-documents {
+  padding-top: 17px;
+  border-top: 1px solid #e7e8e0;
+  color: #647066;
+  font-size: 10px;
+}
+
+.my-application-documents > b {
+  display: block;
+  margin-bottom: 10px;
+  color: #435648;
+}
+
+.my-application-documents > div {
+  display: grid;
+  gap: 6px;
+}
+
+.my-application-documents span {
+  color: #7a847b;
+}
+
+.my-application-feedback {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border-left: 3px solid var(--saffron);
+  background: #faf7f0;
+  color: #655b4d;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.my-application-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid #e7e8e0;
+}
+
+.my-application-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #ccd5c9;
+  background: #fff;
+  color: #3d5543;
+  cursor: pointer;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 11px;
+}
+
+.my-application-actions button:hover {
+  background: #f1f4eb;
+}
+
+.my-application-actions .my-application-delete {
+  border-color: #e1c6c0;
+  color: #984d43;
+}
+
+.my-application-actions .my-application-delete:hover {
+  background: #fbefec;
+}
+
+.my-application-actions button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.my-applications-empty {
+  min-height: 300px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  color: #7c877d;
+  font-size: 12px;
+  text-align: center;
+}
+
+.my-applications-empty svg {
+  color: var(--green);
+}
+
+.my-applications-empty a {
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid #9caf99;
+  padding-bottom: 3px;
+}
+
+.application-notice {
+  margin: 18px 0 0;
+  padding: 11px 14px;
+  background: #edf4e9;
+  color: #426047;
+  font-size: 11px;
+}
+
+.application-reference {
+  margin: 9px 0 0;
+  color: #69766b;
+  font-size: 12px;
+}
+
+.application-reference strong {
+  color: var(--green);
+  letter-spacing: 0.4px;
+}
+
+.admin-shell { min-height: 100vh; display: flex; flex-direction: column; color: #24352a; background: #f4f5ee; }
+.admin-header { min-height: 80px; padding: 0 max(5%, calc((100vw - 1300px) / 2)); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #dfe2d8; background: #fbfbf6; }
+.admin-brand { display: flex; align-items: center; gap: 10px; color: #24352a; text-decoration: none; }
+.admin-brand img { width: 43px; height: 43px; object-fit: contain; }
+.admin-brand span { font-size: 16px; }
+.admin-brand b { color: #315b3b; }
+.admin-brand small { display: block; margin-top: 3px; color: #7b857a; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+.admin-welcome { display: flex; align-items: center; gap: 13px; color: #405244; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; font-weight: 600; }
+.admin-account-wrap { position: relative; }
+.admin-avatar-button { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid #ccd6c8; border-radius: 50%; color: #315b3b; background: #eff3e9; cursor: pointer; }
+.admin-account-menu { width: 205px; position: absolute; z-index: 5; top: calc(100% + 9px); right: 0; padding: 6px; border: 1px solid #dfe2d8; background: white; box-shadow: 0 12px 28px #1d30251a; }
+.admin-account-menu button { width: 100%; padding: 10px; display: flex; align-items: center; gap: 8px; border: 0; color: #79463d; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; text-align: left; }
+.admin-account-menu button:hover { background: #f8efec; }
+.admin-auth-area { flex: 1; padding: 60px 20px; display: grid; place-items: center; }
+.admin-auth-panel { width: min(100%, 430px); padding: 35px; position: relative; border-top: 4px solid #315b3b; background: #fff; box-shadow: 0 15px 45px #27382912; }
+.admin-auth-panel h1 { margin: 0; color: #223529; font-family: 'Noto Serif Devanagari', serif; font-size: 28px; font-weight: 500; }
+.admin-auth-panel > p:not(.section-kicker) { margin: 8px 0 20px; color: #7a8478; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; line-height: 1.8; }
+.admin-close { width: 34px; height: 34px; position: absolute; top: 14px; right: 14px; display: grid; place-items: center; border: 1px solid #e1e4dc; color: #718073; background: white; cursor: pointer; }
+.admin-auth-form { display: grid; gap: 13px; }
+.admin-auth-form label { display: grid; gap: 6px; color: #4d5a4e; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.admin-auth-form input { height: 42px; padding: 0 11px; border: 1px solid #dfe2d9; outline: 0; font-family: sans-serif; font-size: 13px; }
+.admin-auth-form input:focus { border-color: #608066; box-shadow: 0 0 0 2px #315b3b18; }
+.admin-auth-form .submit-button { width: 100%; min-height: 46px; border: 1px solid #315b3b; color: #fff; background-color: #315b3b; opacity: 1; visibility: visible; }
+.admin-auth-form .submit-button:hover:not(:disabled) { border-color: #24482d; color: #fff; background-color: #24482d; }
+.admin-auth-form .submit-button:disabled { color: #fff; background-color: #315b3b; opacity: 0.7; }
+.admin-forgot-link { margin-top: 15px; padding: 0; border: 0; color: #426448; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; text-decoration: underline; }
+.admin-main { width: min(100% - 48px, 1180px); margin: 0 auto; padding: 43px 0 70px; flex: 1; }
+.admin-dashboard-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 28px; }
+.admin-dashboard-heading .section-kicker { margin-bottom: 7px; }
+.admin-dashboard-heading h1 { margin: 0; color: #24352a; font-family: 'Noto Serif Devanagari', serif; font-size: 31px; font-weight: 500; }
+.admin-dashboard-heading h1 span { margin-left: 7px; color: #81907f; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; }
+.admin-pending { display: flex; align-items: center; gap: 8px; padding: 8px 11px; border: 1px solid #e1d9c5; color: #816b43; background: #faf7ed; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.pending-dot { width: 7px; height: 7px; border-radius: 50%; background: #cf8a35; }
+.admin-toolbar { margin-bottom: 17px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #dfe2d8; }
+.admin-filters { display: flex; gap: 5px; }
+.admin-filters button { padding: 10px 13px; border: 0; border-bottom: 2px solid transparent; color: #7b857b; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.admin-filters button.filter-active { border-bottom-color: #315b3b; color: #315b3b; font-weight: 600; }
+.admin-refresh { display: inline-flex; align-items: center; gap: 7px; border: 0; color: #627463; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.admin-refresh svg { transform: rotate(180deg); }
+.admin-error { margin: 12px 0; padding: 10px 13px; color: #963d33; background: #f8eae6; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.admin-empty { min-height: 240px; display: grid; place-content: center; justify-items: center; gap: 12px; color: #899387; background: #fbfcf8; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; }
+.admin-empty svg { color: #81967d; }
+.admin-application-list { display: grid; gap: 15px; }
+.admin-application { padding: 21px 23px 19px; border: 1px solid #e0e3d9; background: #fff; }
+.admin-app-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; padding-bottom: 14px; border-bottom: 1px solid #eceee7; }
+.admin-loan-label { color: #a66d43; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; font-weight: 700; }
+.admin-loan-label.tractor-loan { color: #58714e; }
+.admin-app-card-head h2 { margin: 4px 0 0; color: #2e3e32; font-family: 'Noto Serif Devanagari', serif; font-size: 20px; font-weight: 500; }
+.application-status { padding: 5px 9px; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+.status-submitted { color: #8a6830; background: #f7f0de; }
+.status-approved { color: #35643e; background: #e8f2e6; }
+.status-rejected { color: #984b41; background: #f7e9e6; }
+.status-under-review { color: #4d6074; background: #eaf0f5; }
+.admin-app-details { padding: 14px 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.admin-app-details p { min-width: 0; margin: 0; display: grid; gap: 4px; }
+.admin-app-details b { color: #8a9287; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; font-weight: 400; }
+.admin-app-details span { overflow-wrap: anywhere; color: #35483a; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.admin-doc-list { padding: 13px 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; border-top: 1px solid #eceee7; }
+.admin-doc-list > strong { grid-column: 1 / -1; color: #59685b; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.admin-doc-item { min-width: 0; padding: 8px; display: grid; gap: 8px; border: 1px solid #e2e6dd; }
+.admin-doc-name { min-width: 0; display: grid; grid-template-columns: 15px 1fr; gap: 3px 6px; color: #45624a; }
+.admin-doc-name svg { grid-row: span 2; }
+.admin-doc-name span { overflow: hidden; color: #4f6251; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.admin-doc-name small { overflow: hidden; color: #92998f; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.admin-doc-actions { display: flex; flex-wrap: wrap; gap: 5px 10px; }
+.admin-doc-actions a { display: inline-flex; align-items: center; gap: 4px; color: #416347; text-decoration: none; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+.admin-doc-actions a:hover { color: #9a613a; text-decoration: underline; text-underline-offset: 2px; }
+.existing-admin-feedback { margin: 5px 0 9px; color: #76594d; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.admin-feedback-label { display: grid; gap: 5px; margin-top: 7px; color: #59685b; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.admin-feedback-label textarea { width: 100%; min-height: 54px; padding: 9px 10px; resize: vertical; border: 1px solid #dfe2d9; outline: none; color: #394b3c; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.admin-feedback-label textarea:focus { border-color: #789274; }
+.admin-review-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 11px; }
+.admin-review-actions button { min-height: 35px; padding: 0 11px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; }
+.admin-review-actions button:disabled { opacity: 0.6; cursor: wait; }
+.reject-button { border-color: #e2c9c3 !important; color: #974c42; background: #fff; }
+.reject-button:hover { background: #fbf0ed; }
+.approve-button { border-color: #315b3b !important; color: white; background: #315b3b; }
+.approve-button:hover { background: #24482d; }
+.admin-footer { padding: 18px; border-top: 1px solid #e0e3d9; color: #899286; text-align: center; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 9px; }
+
+.application-section { max-width: 1440px; min-height: 620px; margin: 0 auto; padding: 38px 11.7% 65px; }
+.application-heading { display: flex; align-items: center; justify-content: space-between; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
+.application-heading .detail-back { margin-bottom: 19px; }
+.application-heading .section-kicker { margin-bottom: 7px; }
+.application-heading h1 { margin: 0; color: var(--ink); font-family: 'Noto Serif Devanagari', serif; font-size: 34px; font-weight: 500; }
+.application-heading h1 em { color: var(--green); font-style: normal; }
+.application-close { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid #d8ddd2; color: #546456; background: transparent; cursor: pointer; }
+.application-close:hover { color: #9c493b; border-color: #c98a7e; }
+.application-form { padding-top: 25px; }
+.application-personal { display: grid; grid-template-columns: 1fr 2fr; gap: 22px; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
+.application-form label { display: grid; gap: 6px; color: #4d5a4e; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; font-weight: 600; }
+.application-form input:not([type="file"]) { width: 100%; height: 41px; padding: 0 11px; border: 1px solid #dfe2d9; border-radius: 0; outline: none; color: #26372a; background: white; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; font-weight: 400; }
+.application-form input:not([type="file"]):focus { border-color: #608066; box-shadow: 0 0 0 2px #315b3b18; }
+.application-address { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.application-address > p { grid-column: 1 / -1; margin: 0 0 -3px; color: #7a8479; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.application-documents { margin-top: 4px; }
+.document-row { min-height: 86px; padding: 13px 3px; display: flex; align-items: center; justify-content: space-between; gap: 15px; border-bottom: 1px solid #e4e5dc; }
+.document-row:first-child { border-top: 1px solid #e4e5dc; }
+.document-copy { min-width: 0; display: flex; align-items: center; gap: 14px; }
+.document-index { color: #bf8052; font-family: 'Noto Serif Devanagari', serif; font-size: 13px; }
+.document-copy h2 { margin: 0 0 3px; color: #2b3c2f; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 13px; font-weight: 600; }
+.document-copy p { margin: 0; color: #81887f; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; line-height: 1.6; }
+.document-filename { display: block; max-width: 430px; margin-top: 3px; overflow: hidden; color: #35613e; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.document-selected { background: #f6f8f2; }
+.document-controls { flex: 0 0 auto; display: flex; align-items: center; gap: 7px; }
+.document-controls button { width: 37px; height: 37px; display: grid; place-items: center; border: 1px solid #d8ded3; color: #45634b; background: #fff; cursor: pointer; }
+.document-controls button:hover { border-color: #789274; background: #f2f6ee; }
+.document-controls .document-remove { color: #a14e42; border-color: #e0c6bf; }
+.visually-hidden-file { width: 1px; height: 1px; position: absolute; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+.application-actions { display: flex; justify-content: flex-end; align-items: center; gap: 20px; margin-top: 22px; }
+.application-actions .submit-button { min-width: 185px; }
+.application-cancel { display: inline-flex; align-items: center; gap: 6px; padding: 8px 0; border: 0; color: #7b625d; background: transparent; cursor: pointer; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 12px; }
+.application-cancel:hover { color: #a14132; }
+.application-error { margin-top: 15px; }
+.upload-note { margin: 12px 0 0; color: #848b81; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 10px; text-align: right; }
+.application-success { max-width: 520px; margin: 75px auto; padding: 38px; text-align: center; background: #eef2e8; }
+.application-success > span { width: 48px; height: 48px; margin: 0 auto 15px; display: grid; place-items: center; border: 1px solid #bccdb3; border-radius: 50%; color: var(--green); }
+.application-success h2 { color: #315b3b; font-family: 'Noto Serif Devanagari', serif; font-size: 23px; font-weight: 500; }
+.application-success p { margin: 10px 0 18px; color: #68766a; font-family: 'Noto Sans Devanagari', sans-serif; font-size: 11px; }
+.application-success .submit-button { margin: auto; gap: 12px; }
+
+@keyframes image-arrive { from { opacity: 0; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes panel-arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 980px) {
+  .nav-wrap { padding: 0 5%; }
+  .nav-links { gap: 24px; margin-right: 25px; }
+  .hero-section { min-height: 510px; padding-left: 5%; grid-template-columns: 0.92fr 1.08fr; }
+  .hero-copy { padding-right: 20px; }
+  .hero-copy h1 { font-size: 52px; }
+  .hero-visual { min-height: 430px; }
+  .scroll-cue { left: 5%; }
+  .about-section { padding-right: 7%; padding-left: 7%; gap: 22px; grid-template-columns: 32px 0.9fr 1.1fr; }
+  .loans-section { padding-right: 7%; padding-left: 7%; }
+  .loan-card { grid-template-columns: 0.85fr 1.15fr; }
+  .loan-info { padding-right: 16px; padding-left: 16px; }
+  .closing-band { padding-right: 7%; padding-left: 7%; }
+}
+
+@media (max-width: 700px) {
+  .site-header { height: 72px; }
+  .nav-wrap { padding: 0 19px; }
+  .brand { gap: 8px; }
+  .brand img { width: 40px; height: 40px; }
+  .brand-name { font-size: 16px; }
+  .brand-name small { font-size: 9px; }
+  .mobile-menu-button { width: 40px; height: 40px; margin-left: auto; display: grid; place-items: center; border: 1px solid #d8ddd2; color: var(--ink); background: transparent; }
+  .account-wrap { margin-left: 9px; }
+  .account-button { width: 41px; height: 40px; min-height: auto; justify-content: center; padding: 0; }
+  .account-label, .account-button > svg:last-child { display: none; }
+  .nav-links { position: absolute; top: 71px; left: 0; right: 0; margin: 0; padding: 8px 19px 16px; display: none; align-items: stretch; gap: 0; flex-direction: column; border-bottom: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 20px #1d30250e; }
+  .nav-links-open { display: flex; }
+  .nav-links a { padding: 12px 4px; border-bottom: 1px solid #e7e8df; }
+  .nav-links .nav-contact { border-bottom: 0; }
+  .hero-section { padding: 32px 19px 45px; display: flex; flex-direction: column; gap: 26px; }
+  .hero-copy { padding: 5px 0 0; }
+  .eyebrow { margin-bottom: 15px; font-size: 11px; }
+  .hero-copy h1 { font-size: 42px; line-height: 1.35; }
+  .hero-description { max-width: 430px; margin-top: 12px; font-size: 13px; line-height: 1.8; }
+  .primary-link { margin-top: 18px; padding: 12px 15px; }
+  .hero-note { display: none; }
+  .hero-visual { min-height: 290px; width: 100%; }
+  .hero-stamp { width: 82px; height: 82px; top: 14px; right: 14px; font-size: 9px; }
+  .image-caption { left: 17px; bottom: 17px; font-size: 10px; }
+  .scroll-cue { left: 19px; bottom: 14px; }
+  .about-section { min-height: 0; padding: 42px 23px 44px; grid-template-columns: 30px 1fr; gap: 10px 14px; }
+  .section-index { grid-row: 1 / span 2; }
+  .about-heading h2 { font-size: 29px; }
+  .about-content { padding-top: 8px; grid-column: 2; }
+  .about-content > p { font-size: 12px; }
+  .about-watermark { right: -13px; bottom: -26px; font-size: 125px; }
+  .loans-section { padding: 56px 19px 49px; }
+  .loans-topline { align-items: start; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+  .loans-topline h2 { font-size: 25px; }
+  .loans-intro { font-size: 11px; }
+  .loan-grid { grid-template-columns: 1fr; gap: 15px; }
+  .loan-detail { min-height: 0; padding: 24px 19px 38px; }
+  .loan-detail-layout { min-height: 0; padding: 30px 0 24px; grid-template-columns: 1fr; gap: 25px; }
+  .loan-detail-copy h1 { font-size: 36px; }
+  .loan-detail-description { margin: 12px 0 18px; font-size: 12px; }
+  .loan-detail-image { height: 290px; }
+  .application-section { min-height: 0; padding: 25px 19px 45px; }
+  .application-heading h1 { font-size: 27px; }
+  .application-personal { grid-template-columns: 1fr; gap: 16px; }
+  .application-address { grid-template-columns: 1fr; }
+  .application-address > p { grid-column: auto; }
+  .document-row { align-items: flex-start; }
+  .document-copy { gap: 8px; }
+  .document-copy h2 { font-size: 11px; }
+  .document-copy p { max-width: 240px; font-size: 9px; }
+  .document-controls { gap: 4px; }
+  .document-controls button { width: 33px; height: 33px; }
+  .application-actions { justify-content: space-between; gap: 10px; }
+  .application-actions .submit-button { min-width: 155px; }
+  .upload-note { text-align: left; line-height: 1.6; }
+  .loan-card { grid-template-columns: 0.85fr 1.15fr; min-height: 235px; }
+  .loan-photo { min-height: 235px; }
+  .loan-info { padding: 22px 15px 17px; }
+  .loan-info h3 { font-size: 22px; }
+  .loan-description { font-size: 11px; line-height: 1.75; }
+  .loan-action { gap: 6px; font-size: 10px; }
+  .loan-footnote { font-size: 9px; }
+  .closing-band { min-height: 82px; padding: 15px 19px; gap: 12px; }
+  .closing-leaf { width: 38px; height: 38px; flex: 0 0 38px; }
+  .closing-band p { font-size: 15px; line-height: 1.6; }
+  .closing-band > a { width: 35px; height: 35px; flex: 0 0 35px; }
+  .site-footer { padding: 19px; flex-wrap: wrap; gap: 10px; }
+  .site-footer > p { order: 3; width: 100%; margin-top: 5px; font-size: 9px; }
+  .login-panel { padding: 22px 24px 23px; }
+  .login-mark { width: 42px; height: 42px; }
+  .notifications-wrap { margin-right: 8px; }
+  .notification-button { width: 39px; height: 40px; }
+  .notification-page { width: calc(100% - 38px); padding: 35px 0 50px; }
+  .notification-page-heading h1 { font-size: 28px; }
+  .notification-page-item { grid-template-columns: 31px 1fr; gap: 10px; }
+  .notification-read-label { grid-column: 2; justify-self: start; }
+    .my-applications-page {
+    width: calc(100% - 38px);
+    padding: 35px 0 50px;
+  }
+
+  .my-applications-heading {
+    align-items: flex-start;
+  }
+
+  .my-applications-heading h1 {
+    font-size: 28px;
+  }
+
+  .my-application-card {
+    padding: 18px;
+  }
+
+  .my-application-card-head {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .my-application-details {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .my-application-actions {
+    flex-direction: column;
+  }
+
+  .my-application-actions button {
+    justify-content: center;
+  }
+  .admin-header { min-height: 69px; padding: 0 17px; }
+  .admin-main { width: calc(100% - 32px); padding-top: 29px; }
+  .admin-dashboard-heading h1 { font-size: 26px; }
+  .admin-app-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-doc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-doc-list > strong { grid-column: 1 / -1; }
+  .admin-application { padding: 16px; }
+  .admin-filters { overflow-x: auto; }
+  .admin-filters button { flex: 0 0 auto; padding-right: 9px; padding-left: 9px; font-size: 10px; }
+  .admin-refresh { flex: 0 0 auto; }
+  .admin-auth-panel { padding: 27px 22px; }
+}
+
+@media (max-width: 390px) {
+  .loan-card { grid-template-columns: 0.76fr 1.24fr; }
+  .loan-info { padding-right: 11px; padding-left: 12px; }
+  .loan-info h3 { font-size: 20px; }
+  .loan-description { margin: 8px 0 11px; font-size: 10px; }
+  .loan-action { font-size: 9px; }
+  .login-panel { padding-right: 19px; padding-left: 19px; }
+}
